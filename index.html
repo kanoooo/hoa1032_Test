@@ -21,6 +21,12 @@
 
 <body>
 
+    あなたのお名前は？
+    <!-- 名前入力 -->
+    <input type="text" id="userName" placeholder="名前を入力" oninput="showSerif()">
+
+    <br>
+
     キャラクターを選択してください
     <!-- キャラクター選択 -->
     <select id="characterSelect" onchange="showSerif()">
@@ -29,13 +35,6 @@
         <option value="marine">マリン</option>
         <option value="noel">ノエル</option>
     </select>
-
-    <br>
-
-    あなたのお名前は？
-    <!-- 名前入力 -->
-    <input type="text" id="userName" placeholder="名前を入力" oninput="showSerif()">
-
 
 
     <p id="serif"></p>
