@@ -1,16 +1,57 @@
-<html>
+<html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HP_Test</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #serif {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
+<!-- ドロップダウン -->
+
 <body>
-    <p>Hello World</p>
-    <p>はろー わーるど</p>
+
+    <h2>キャラクターを選択してください</h2>
+    <select id="characterSelect" onchange="showSerif()">
+        <option value="">-- 選択 --</option>
+        <option value="alice">アリス</option>
+        <option value="bob">ボブ</option>
+        <option value="charlie">チャーリー</option>
+    </select>
+
+    <p id="serif"></p>
+
+    <!-- 台詞 -->
+    <script>
+        function showSerif() {
+            const selectBox = document.getElementById("characterSelect");
+            const selectedValue = selectBox.value;
+            const serifBox = document.getElementById("serif");
+
+            // キャラクターごとのセリフ
+            const serifs = {
+                "alice": "こんにちは！アリスよ！",
+                "bob": "やあ、ボブだよ！",
+                "charlie": "チャーリー参上！"
+            };
+
+            // 選択されたキャラクターのセリフを表示（選択なしなら空にする）
+            serifBox.textContent = serifs[selectedValue] || "";
+        }
+    </script>
+
 </body>
 
 </html>
