@@ -14,7 +14,6 @@
         #serif {
             margin-top: 20px;
             font-size: 18px;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -23,12 +22,12 @@
 
 <body>
 
-    <h2>キャラクターを選択してください</h2>
+    <h1>キャラクターを選択してください</h1>
     <select id="characterSelect" onchange="showSerif()">
         <option value="">-- 選択 --</option>
-        <option value="alice">アリス</option>
-        <option value="bob">ボブ</option>
-        <option value="charlie">チャーリー</option>
+        <option value="pekora">ぺこら</option>
+        <option value="marine">マリン</option>
+        <option value="noel">ノエル</option>
     </select>
 
     <p id="serif"></p>
@@ -42,9 +41,9 @@
 
             // キャラクターごとのセリフ
             const serifs = {
-                "alice": "こんにちは！アリスよ！",
-                "bob": "やあ、ボブだよ！",
-                "charlie": "チャーリー参上！"
+                "pekora": "こんぺこ〜！",
+                "marine": "Ahoy！",
+                "noel": "こんマッスル〜！"
             };
 
             // 選択されたキャラクターのセリフを表示（選択なしなら空にする）
