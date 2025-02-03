@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -18,11 +19,10 @@
     </style>
 </head>
 
-<!-- ドロップダウン -->
-
 <body>
 
-    <h1>キャラクターを選択してください</h1>
+    キャラクターを選択してください
+    <!-- キャラクター選択 -->
     <select id="characterSelect" onchange="showSerif()">
         <option value="">-- 選択 --</option>
         <option value="pekora">ぺこら</option>
@@ -30,23 +30,31 @@
         <option value="noel">ノエル</option>
     </select>
 
+    あなたのお名前は？
+    <!-- 名前入力 -->
+    <input type="text" id="userName" placeholder="あなたの名前を入力" oninput="showSerif()">
+
+
+
     <p id="serif"></p>
 
-    <!-- 台詞 -->
     <script>
         function showSerif() {
             const selectBox = document.getElementById("characterSelect");
-            const selectedValue = selectBox.value;
+            const nameInput = document.getElementById("userName");
             const serifBox = document.getElementById("serif");
 
-            // キャラクターごとのセリフ
+            const selectedValue = selectBox.value;
+            const userName = nameInput.value || "あなた"; // 名前が未入力の場合は「あなた」
+
+            // キャラクターごとのセリフ（◯◯を入力名に置き換える）
             const serifs = {
-                "pekora": "こんぺこ〜！",
-                "marine": "Ahoy！",
-                "noel": "こんマッスル〜！"
+                "pekora": `こんぺこ〜！${userName}！`,
+                "marine": `Ahoy！${userName}くん`,
+                "noel": `こんマッスル〜！${userName}さん`
             };
 
-            // 選択されたキャラクターのセリフを表示（選択なしなら空にする）
+            // 選択されたキャラクターのセリフを表示（選択なしなら空）
             serifBox.textContent = serifs[selectedValue] || "";
         }
     </script>
